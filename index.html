@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Auribus Passenger Counter
+    </title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div id="header">
+        <h2>
+            Auribus Passenger Counter
+        </h2>
+        <img src="logo.jpeg" alt="Auribus Consulting">
+    </div>
+    <div id="survey">
+        <div id="dropdowns">
+            <div id="surveyor_div">
+                <label for="surveyors"> Surveyor: </label>
+                <select name="surveyors" id="surveyors">
+                    <option disabled="true" selected="selected">Surveyor</option>
+                    <option value="surveyor 1">surveyor 1</option>
+                    <option value="surveyor 2">surveyor 2</option>
+                    <option value="surveyor 3">surveyor 3</option>
+                    <option value="surveyor 4">surveyor 4</option>
+                    <option value="surveyor 5">surveyor 5</option>
+                    <option value="surveyor 6">surveyor 6</option>
+                    <option value="surveyor 7">surveyor 7</option>
+                    <option value="surveyor 8">surveyor 8</option>
+                    <option value="surveyor 9">surveyor 9</option>
+                    <option value="surveyor 10">surveyor 10</option>
+                </select>
+            </div>
+            <!-- ASK ABOUT: middleborough/lakeville is duped is that cause two separate stations? There's also another one
+            with a slash in it is that what we want? -->
+            <div id="station_div">
+                <label for="stations"> Station: </label>
+                <select name="stations" id="stations">
+                    <option disabled="true" selected="selected">Station</option>
+                    <option value="Abington">Abington</option>
+                    <option value="Anderson/Woburn">Anderson/Woburn</option>
+                    <option value="Andover">Andover</option>
+                    <option value="Ashland">Ashland</option>
+                    <option value="Attleboro">Attleboro</option>
+                    <option value="Auburndale">Auburndale</option>
+                    <option value="Ayer">Ayer</option>
+                    <option value="Back Bay">Back Bay</option>
+                    <option value="Ballardvale">Ballardvale</option>
+                    <option value="Bellevue">Bellevue</option>
+                    <option value="Belmont">Belmont</option>
+                    <option value="Beverly">Beverly</option>
+                    <option value="Beverly Farms">Beverly Farms</option>
+                    <option value="Blue Hill Ave">Blue Hill Ave</option>
+                    <option value="Boston Landing">Boston Landing</option>
+                    <option value="Bradford">Bradford</option>
+                    <option value="Braintree">Braintree</option>
+                    <option value="Brandeis/Roberts">Brandeis/Roberts</option>
+                    <option value="Bridgewater">Bridgewater</option>
+                    <option value="Brockton">Brockton</option>
+                    <option value="Campello">Campello</option>
+                    <option value="Canton Center">Canton Center</option>
+                    <option value="Canton Junction">Canton Junction</option>
+                    <option value="Chelsea">Chelsea</option>
+                    <option value="Cohasset">Cohasset</option>
+                    <option value="Concord">Concord</option>
+                    <option value="Dedham Corp. Center">Dedham Corp. Center</option>
+                    <option value="East Weymouth">East Weymouth</option>
+                    <option value="Endicott">Endicott</option>
+                    <option value="Fairmount">Fairmount</option>
+                    <option value="Fitchburg">Fitchburg</option>
+                    <option value="Forest Hills">Forest Hills</option>
+                    <option value="Forge Park/495">Forge Park/495</option>
+                    <option value="Four Corners/Geneva Ave">Four Corners/Geneva Ave</option>
+                    <option value="Foxboro">Foxboro</option>
+                    <option value="Framingham">Framingham</option>
+                    <option value="Franklin/Dean College">Franklin/Dean College</option>
+                    <option value="Gloucester">Gloucester</option>
+                    <option value="Grafton">Grafton</option>
+                    <option value="Greenbush">Greenbush</option>
+                    <option value="Greenwood">Greenwood</option>
+                    <option value="Halifax">Halifax</option>
+                    <option value="Hamilton/Wenham">Hamilton/Wenham</option>
+                    <option value="Hanson">Hanson</option>
+                    <option value="Haverhill">Haverhill</option>
+                    <option value="Hersey">Hersey</option>
+                    <option value="Highland">Highland</option>
+                    <option value="Holbrook/Randolph">Holbrook/Randolph</option>
+                    <option value="Hyde Park">Hyde Park</option>
+                    <option value="Ipswich">Ipswich</option>
+                    <option value="Islington">Islington</option>
+                    <option value="JFK/UMass">JFK/UMass</option>
+                    <option value="Kendal Green">Kendal Green</option>
+                    <option value="Kingston">Kingston</option>
+                    <option value="Lansdowne">Lansdowne</option>
+                    <option value="Lawrence">Lawrence</option>
+                    <option value="Lincoln">Lincoln</option>
+                    <option value="Littleton/Route 495">Littleton/Route 495</option>
+                    <option value="Lowell">Lowell</option>
+                    <option value="Lynn Interim">Lynn Interim</option>
+                    <option value="Malden Center">Malden Center</option>
+                    <option value="Manchester">Manchester</option>
+                    <option value="Mansfield">Mansfield</option>
+                    <option value="Melrose Highlands">Melrose Highlands</option>
+                    <option value="Melrose/Cedar Park">Melrose/Cedar Park</option>
+                    <option value="Middleborough/Lakeville">Middleborough/Lakeville</option>
+                    <option value="Montello">Montello</option>
+                    <option value="Montserrat">Montserrat</option>
+                    <option value="Morton Street">Morton Street</option>
+                    <option value="Nantasket Junction">Nantasket Junction</option>
+                    <option value="Natick Center">Natick Center</option>
+                    <option value="Needham Center">Needham Center</option>
+                    <option value="Needham Heights">Needham Heights</option>
+                    <option value="Needham Junction">Needham Junction</option>
+                    <option value="Newburyport">Newburyport</option>
+                    <option value="Newmarket">Newmarket</option>
+                    <option value="Newtonville">Newtonville</option>
+                    <option value="Norfolk">Norfolk</option>
+                    <option value="North Beverly">North Beverly</option>
+                    <option value="North Billerica">North Billerica</option>
+                    <option value="North Leominster">North Leominster</option>
+                    <option value="North Scituate">North Scituate</option>
+                    <option value="North Station">North Station</option>
+                    <option value="North Wilmington">North Wilmington</option>
+                    <option value="Norwood Central">Norwood Central</option>
+                    <option value="Norwood Depot">Norwood Depot</option>
+                    <option value="Oak Grove">Oak Grove</option>
+                    <option value="Pawtucket/Central Falls">Pawtucket/Central Falls</option>
+                    <option value="Porter Square">Porter Square</option>
+                    <option value="Providence (Arr.)">Providence (Arr.)</option>
+                    <option value="Providence (Dep.)">Providence (Dep.)</option>
+                    <option value="Quincy Center">Quincy Center</option>
+                    <option value="Reading">Reading</option>
+                    <option value="Readville">Readville</option>
+                    <option value="River Works">River Works</option>
+                    <option value="Rockport">Rockport</option>
+                    <option value="Roslindale Village">Roslindale Village</option>
+                    <option value="Route 128">Route 128</option>
+                    <option value="Rowley">Rowley</option>
+                    <option value="Ruggles">Ruggles</option>
+                    <option value="Salem">Salem</option>
+                    <option value="Sharon">Sharon</option>
+                    <option value="Shirley">Shirley</option>
+                    <option value="South Acton">South Acton</option>
+                    <option value="South Station">South Station</option>
+                    <option value="South Weymouth">South Weymouth</option>
+                    <option value="Southborough">Southborough</option>
+                    <option value="Stoughton">Stoughton</option>
+                    <option value="Swampscott">Swampscott</option>
+                    <option value="Talbot Ave">Talbot Ave</option>
+                    <option value="TF Green Airport">TF Green Airport</option>
+                    <option value="Uphams Corner">Uphams Corner</option>
+                    <option value="Wachusett">Wachusett</option>
+                    <option value="Wakefield">Wakefield</option>
+                    <option value="Walpole">Walpole</option>
+                    <option value="Waltham">Waltham</option>
+                    <option value="Waverley">Waverley</option>
+                    <option value="Wedgemere">Wedgemere</option>
+                    <option value="Wellesley Farms">Wellesley Farms</option>
+                    <option value="Wellesley Hills">Wellesley Hills</option>
+                    <option value="Wellesley Square">Wellesley Square</option>
+                    <option value="West Concord">West Concord</option>
+                    <option value="West Gloucester">West Gloucester</option>
+                    <option value="West Hingham">West Hingham</option>
+                    <option value="West Medford">West Medford</option>
+                    <option value="West Natick">West Natick</option>
+                    <option value="West Newton">West Newton</option>
+                    <option value="West Roxbury">West Roxbury</option>
+                    <option value="Westborough">Westborough</option>
+                    <option value="Weymouth Landing/East Braintree">Weymouth Landing/East Braintree</option>
+                    <option value="Whitman">Whitman</option>
+                    <option value="Wickford Junction">Wickford Junction</option>
+                    <option value="Wilmington">Wilmington</option>
+                    <option value="Windsor Gardens">Windsor Gardens</option>
+                    <option value="Worcester">Worcester</option>
+                    <option value="Wyoming Hill">Wyoming Hill</option>
+                </select>
+            </div>
+            <div id="train_div">
+                <textarea id="train" type="text" placeholder="Train" rows="1"></textarea>
+            </div>
+            <div id="direction_div">
+                <label>
+                    Inbound
+                </label>
+                <input type="radio" name="i/o" id="inbound">
+                <label>
+                    Outbound
+                </label>
+                <input type="radio" name="i/o" id="outbound">
+            </div>
+        </div>
+        <div id="counters">
+            <div id="counter">
+                <button id="on_minus" class="p/m">-</button>
+                <p id="on_number">0</p>
+                <button id="on_plus" class="p/m">+</button>
+            </div>
+            <div id="counter">
+                <button id="off_minus" class="p/m">-</button>
+                <p id="on_number">0</p>
+                <button id="off_plus" class="p/m">+</button>
+            </div>
+        </div>
+        <div id="submits">
+            <button id="submit">
+                Submit
+            </button>
+            <button id="reset">
+                Reset
+            </button>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        import { FB_KEY } from "/secrets.js";
+
+        const firebaseConfig = {
+            apiKey: "",
+            authDomain: "auribus-passenger-counter.firebaseapp.com",
+            projectId: "auribus-passenger-counter",
+            storageBucket: "auribus-passenger-counter.appspot.com",
+            messagingSenderId: "1097866410747",
+            appId: "1:1097866410747:web:23913cfae66c3175608e5e"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        console.log(FB_KEY)
+    </script>
+</body>
+
+</html>
