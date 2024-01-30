@@ -5,18 +5,21 @@
     <title>
         Auribus Passenger Counter
     </title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
-    <div id="header">
-        <h2>
+    <div id="header" class="row">
+        <h2 class="col-sm-6 text-center t">
             Auribus Passenger Counter
         </h2>
-        <img src="logo.jpeg" alt="Auribus Consulting">
+        <img src="logo.jpeg" alt="Auribus Consulting" class="logo col-sm-2">
     </div>
     <div id="survey">
         <div id="dropdowns">
@@ -36,8 +39,7 @@
                     <option value="surveyor 10">surveyor 10</option>
                 </select>
             </div>
-            <!-- ASK ABOUT: middleborough/lakeville is duped is that cause two separate stations? There's also another one
-            with a slash in it is that what we want? -->
+            <br>
             <div id="station_div">
                 <label for="stations"> Station: </label>
                 <select name="stations" id="stations">
@@ -180,38 +182,46 @@
                     <option value="Wyoming Hill">Wyoming Hill</option>
                 </select>
             </div>
+            <br>
             <div id="train_div">
                 <textarea id="train" type="text" placeholder="Train" rows="1"></textarea>
             </div>
+            <br>
             <div id="direction_div">
                 <label>
                     Inbound
                 </label>
-                <input type="radio" name="i/o" id="inbound">
-                <label>
+                <input type="radio" name="i/o" id="inbound" class="i_o">
+                <label class="out">
                     Outbound
                 </label>
                 <input type="radio" name="i/o" id="outbound">
             </div>
+            <br>
         </div>
         <div id="counters">
-            <div id="counter">
-                <button id="on_minus" class="p/m">-</button>
-                <p id="on_number">0</p>
-                <button id="on_plus" class="p/m">+</button>
+            <h3 class="col-sm-12 text-center">On's</h3>
+            <div id="counter" class="justify-content-center">
+                <button id="on_minus" class="minus p-m"> - </button>
+                <h4 id="on_number" class="text-center">0</h4>
+                <button id="on_plus" class="plus p-m"> + </button>
             </div>
-            <div id="counter">
-                <button id="off_minus" class="p/m">-</button>
-                <p id="on_number">0</p>
-                <button id="off_plus" class="p/m">+</button>
+            <br>
+            <h3 class="col-sm-12 text-center">Off's</h3>
+            <div id="counter" class="justify-content-center">
+                <button id="off_minus" class="minus p-m"> - </button>
+                <h4 id="off_number" class="text-center">0</h4>
+                <button id="off_plus" class="plus p-m"> + </button>
             </div>
         </div>
+        <br>
+        <p id="error-message"></p>
         <div id="submits">
             <button id="submit">
-                Submit
+                <strong>Submit</strong>
             </button>
             <button id="reset">
-                Reset
+                <strong>Reset</strong>
             </button>
         </div>
     </div>
@@ -230,7 +240,6 @@
         };
 
         const app = initializeApp(firebaseConfig);
-        console.log(FB_KEY)
     </script>
 </body>
 

@@ -1,3 +1,82 @@
+.logo {
+  width: 10%;
+  float: right;
+}
+
+label {
+  font-size: 150%;
+  margin-right: 1%;
+}
+
+.out {
+  margin-left: 1%;
+}
+
+.p-m {
+  border-width: 1px;
+  border-color: black;
+  border-radius: 50%;
+}
+
+.plus {
+  color: green;
+  padding-left: 1.4%;
+  padding-right: 1.4%;
+}
+
+.minus {
+  color: red;
+  padding-left: 1.7%;
+  padding-right: 1.7%;
+}
+
+#on_number {
+  color: green;
+  display: inline-block;
+}
+
+#off_number {
+  color: red;
+  display: inline-block;
+}
+
+#counter * {
+  display: inline-block;
+  margin-left: 3%;
+  font-size: 175%;
+}
+
+#counter {
+  margin-left: 43%;
+}
+
+.t {
+  margin-top: 3%;
+}
+
+#survey {
+  margin-left: 3%;
+}
+
 textarea {
   resize: none;
+}
+
+#submit {
+  color: green;
+  margin-left: 70%;
+  margin-right: 3%;
+}
+
+#reset {
+  color: red;
+}
+
+#submits {
+  margin-top: 3%;
+  font-size: 150%;
+}
+
+#error-message {
+  color: red;
 }
