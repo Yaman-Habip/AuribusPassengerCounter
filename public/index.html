@@ -9,12 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore-compat.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="icon" href="public/favicon-16x16.png" type="image/png">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/png">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
         <h2 class="col-sm-6 text-center t">
             Auribus Passenger Counter
         </h2>
-        <img src="logo.jpeg" alt="Auribus Consulting" class="logo col-sm-2">
+        <img src="images/logo.jpeg" alt="Auribus Consulting" class="logo col-sm-2">
     </div>
     <div id="survey">
         <div id="dropdowns">
@@ -234,6 +234,8 @@
         import { getFirestore, doc, setDoc, Timestamp }
             from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
 
+        console.log(FB_KEY);
+
         const firebaseConfig = {
             apiKey: FB_KEY,
             authDomain: "auribus-passenger-counter.firebaseapp.com",
@@ -243,7 +245,7 @@
             appId: "1:1097866410747:web:23913cfae66c3175608e5e"
         };
 
-        const app = initializeApp(firebaseConfig);
+        const app = await initializeApp(firebaseConfig);
         const db = getFirestore();
 
         async function submit_func() {
