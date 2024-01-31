@@ -14,6 +14,7 @@
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="public/favicon-16x16.png" type="image/png">
 </head>
 
 <body>
@@ -242,8 +243,7 @@
             appId: "1:1097866410747:web:23913cfae66c3175608e5e"
         };
 
-
-        const submit = document.getElementById("submit");
+        const app = initializeApp(firebaseConfig);
         const db = getFirestore();
 
         async function submit_func() {
@@ -287,8 +287,8 @@
 
         }
 
+        const submit = document.getElementById("submit");
         submit.addEventListener("click", submit_func);
-        const app = initializeApp(firebaseConfig);
     </script>
 </body>
 
