@@ -251,12 +251,11 @@
             const surveyor = document.getElementById("surveyors").value;
             const station = document.getElementById("stations").value;
             const train = document.getElementById("train").value;
+            let direction = "unset";
             if (document.getElementById("inbound").checked) {
-                const direction = "inbound";
+                direction = "inbound";
             } else if (document.getElementById("outbound").checked) {
-                const direction = "outbound";
-            } else {
-                const direction = "unset";
+                direction = "outbound";
             }
             const on_count = document.getElementById("on_number").innerText;
             const off_count = document.getElementById("off_number").innerText;
@@ -272,7 +271,7 @@
             } else {
                 if (confirm("Are you sure you want to submit?")) {
                     const time = Timestamp.now();
-                    const doc_name = train + time;
+                    const doc_name = station + "—" + train + "—" + direction;
                     await setDoc(doc(db, "Passenger Data", doc_name), {
                         Direction: direction,
                         Off: off_count,
