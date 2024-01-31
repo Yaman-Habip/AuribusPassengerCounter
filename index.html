@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
@@ -184,7 +186,8 @@
             </div>
             <br>
             <div id="train_div">
-                <textarea id="train" type="text" placeholder="Train" rows="1"></textarea>
+                <label id="train_label">Train Number:</label>
+                <textarea id="train" type="text" placeholder="Train Number" rows="1"></textarea>
             </div>
             <br>
             <div id="direction_div">
@@ -200,27 +203,25 @@
             <br>
         </div>
         <div id="counters">
-            <h3 class="col-sm-12 text-center">On's</h3>
+            <h3>On's</h3>
             <div id="counter" class="justify-content-center">
-                <button id="on_minus" class="minus p-m"> - </button>
+                <button id="on_minus" class="minus p-m" onclick="change_count(true,false)"> - </button>
                 <h4 id="on_number" class="text-center">0</h4>
-                <button id="on_plus" class="plus p-m"> + </button>
+                <button id="on_plus" class="plus p-m" onclick="change_count(true,true)"> + </button>
             </div>
             <br>
-            <h3 class="col-sm-12 text-center">Off's</h3>
+            <h3>Off's</h3>
             <div id="counter" class="justify-content-center">
-                <button id="off_minus" class="minus p-m"> - </button>
+                <button id="off_minus" class="minus p-m" onclick="change_count(false,false)"> - </button>
                 <h4 id="off_number" class="text-center">0</h4>
-                <button id="off_plus" class="plus p-m"> + </button>
+                <button id="off_plus" class="plus p-m" onclick="change_count(false,true)"> + </button>
             </div>
         </div>
-        <br>
-        <p id="error-message"></p>
         <div id="submits">
             <button id="submit">
                 <strong>Submit</strong>
             </button>
-            <button id="reset">
+            <button id="reset" onclick="location.reload()">
                 <strong>Reset</strong>
             </button>
         </div>
@@ -229,9 +230,11 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
         import { FB_KEY } from "/secrets.js";
+        import { getFirestore, doc, setDoc, Timestamp }
+            from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
 
         const firebaseConfig = {
-            apiKey: "",
+            apiKey: FB_KEY,
             authDomain: "auribus-passenger-counter.firebaseapp.com",
             projectId: "auribus-passenger-counter",
             storageBucket: "auribus-passenger-counter.appspot.com",
@@ -239,6 +242,52 @@
             appId: "1:1097866410747:web:23913cfae66c3175608e5e"
         };
 
+
+        const submit = document.getElementById("submit");
+        const db = getFirestore();
+
+        async function submit_func() {
+            const surveyor = document.getElementById("surveyors").value;
+            const station = document.getElementById("station").value;
+            const train = document.getElementById("train").value;
+            if (document.getElementById("inbound").checked) {
+                const direction = "inbound";
+            } else if (document.getElementById("outbound").checked) {
+                const direction = "outbound";
+            } else {
+                const direction = "unset";
+            }
+            const on_count = document.getElementById("on_number").innerText;
+            const off_count = document.getElementById("off_number").innerText;
+
+            if (surveyor == "Surveyor") {
+                alert("Please pick a surveyor");
+            } else if (station == "Station") {
+                alert("Please pick a station");
+            } else if (not(/^\d{3}$/.test(obj))) {
+                alert("Train numbers must be 3 digits");
+            } else if (direction == "unset") {
+                alert("Please pick a direction");
+            } else {
+                if (confirm("Are you sure you want to submit?")) {
+                    const time = Timestamp.now();
+                    const doc_name = train + time;
+                    await setDoc(doc(db, "Passenger Data", doc_name), {
+                        Direction: direction,
+                        Off: off_count,
+                        On: on_count,
+                        Station: station,
+                        Surveyor: surveyor,
+                        Timestamp: time,
+                        TrainNumber: train
+                    });
+                    location.reload();
+                }
+            }
+
+        }
+
+        submit.addEventListener("click", submit_func);
         const app = initializeApp(firebaseConfig);
     </script>
 </body>

@@ -20,14 +20,26 @@ label {
 
 .plus {
   color: green;
-  padding-left: 1.4%;
-  padding-right: 1.4%;
+  padding-left: 2.7%;
+  padding-right: 2.7%;
+  font-size: 350%;
+  padding-bottom: 1%;
 }
 
 .minus {
   color: red;
-  padding-left: 1.7%;
-  padding-right: 1.7%;
+  padding-left: 1.9%;
+  padding-right: 1.9%;
+  font-size: 225%;
+}
+
+h4 {
+  font-size: 150%;
+}
+
+h3 {
+  font-size: 200%;
+  margin-left: 43%;
 }
 
 #on_number {
@@ -43,11 +55,10 @@ label {
 #counter * {
   display: inline-block;
   margin-left: 3%;
-  font-size: 175%;
 }
 
 #counter {
-  margin-left: 43%;
+  margin-left: 37%;
 }
 
 .t {
@@ -64,12 +75,16 @@ textarea {
 
 #submit {
   color: green;
-  margin-left: 70%;
+  margin-left: 60%;
   margin-right: 3%;
 }
 
 #reset {
   color: red;
+}
+
+#submit {
+  font-size: 250%;
 }
 
 #submits {
