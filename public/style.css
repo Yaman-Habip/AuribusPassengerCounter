@@ -24,6 +24,8 @@ label {
   padding-right: 2.7%;
   font-size: 350%;
   padding-bottom: 1%;
+  touch-action: manipulation;
+  outline: none;
 }
 
 .minus {
@@ -31,6 +33,8 @@ label {
   padding-left: 1.9%;
   padding-right: 1.9%;
   font-size: 225%;
+  touch-action: manipulation;
+  outline: none;
 }
 
 h4 {
