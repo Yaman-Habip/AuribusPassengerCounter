@@ -43,7 +43,7 @@ h4 {
 
 h3 {
   font-size: 200%;
-  margin-left: 43%;
+  margin-left: 45%;
 }
 
 #on_number {
@@ -62,7 +62,7 @@ h3 {
 }
 
 #counter {
-  margin-left: 37%;
+  margin-left: 37.5%;
 }
 
 .t {
@@ -79,7 +79,7 @@ textarea {
 
 #submit {
   color: green;
-  margin-left: 60%;
+  margin-left: 65%;
   margin-right: 3%;
 }
 
@@ -98,4 +98,8 @@ textarea {
 
 #error-message {
   color: red;
+}
+
+.number_container {
+  width: 4em;
 }
